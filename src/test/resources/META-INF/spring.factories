@@ -1,0 +1,5 @@
+org.springframework.test.context.ContextCustomizerFactory = org.petclinic.\
+    config.SqlTestContainersSpringContextCustomizerFactory,org.petclinic.config.\
+    TestContainersSpringContextCustomizerFactory,org.petclinic.config.\
+    RedisTestContainersSpringContextCustomizerFactory,org.petclinic.config.\
+    KafkaTestContainersSpringContextCustomizerFactory
