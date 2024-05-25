@@ -1,0 +1,50 @@
+entity Vet {
+    firstName String maxlength(30),
+    lastName String maxlength(30)
+}
+
+entity Specialty {
+    name String maxlength(80)
+}
+
+entity VetSpecialty {
+}
+
+relationship ManyToMany {
+    Vet{specialties(name)} to Specialty{vets(firstName)}
+}
+
+entity PetType {
+    name String maxlength(80)
+}
+
+entity Owner {
+    firstName String maxlength(30),
+    lastName String maxlength(30),
+    address String maxlength(255),
+    city String maxlength(80),
+    telephone String maxlength(20)
+}
+
+entity Pet {
+    name String maxlength(30),
+    birthDate LocalDate,
+}
+
+relationship ManyToOne {
+    Pet{type(name)} to PetType,
+    Pet{owner(lastName)} to Owner
+}
+
+entity Visit {
+    visitDate LocalDate,
+    description String maxlength(255)
+}
+
+relationship ManyToOne {
+    Visit{pet(name)} to Pet
+}
+dto * with mapstruct
+service * with serviceClass
+paginate PetType with infinite-scroll
+paginate Vet, Specialty, Owner, Pet, Visit with pagination

@@ -71,6 +71,15 @@ public class CacheConfiguration {
     @Bean
     public JCacheManagerCustomizer cacheManagerCustomizer(javax.cache.configuration.Configuration<Object, Object> jcacheConfiguration) {
         return cm -> {
+            createCache(cm, org.petclinic.domain.Owner.class.getName(), jcacheConfiguration);
+            createCache(cm, org.petclinic.domain.Pet.class.getName(), jcacheConfiguration);
+            createCache(cm, org.petclinic.domain.PetType.class.getName(), jcacheConfiguration);
+            createCache(cm, org.petclinic.domain.Specialty.class.getName(), jcacheConfiguration);
+            createCache(cm, org.petclinic.domain.Specialty.class.getName() + ".vets", jcacheConfiguration);
+            createCache(cm, org.petclinic.domain.Vet.class.getName(), jcacheConfiguration);
+            createCache(cm, org.petclinic.domain.Vet.class.getName() + ".specialties", jcacheConfiguration);
+            createCache(cm, org.petclinic.domain.VetSpecialty.class.getName(), jcacheConfiguration);
+            createCache(cm, org.petclinic.domain.Visit.class.getName(), jcacheConfiguration);
             // jhipster-needle-redis-add-entry
         };
     }

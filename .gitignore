@@ -151,3 +151,10 @@ Desktop.ini
 ######################
 /coverage/
 /.nyc_output/
+/.jhipster/Owner.json
+/.jhipster/Pet.json
+/.jhipster/PetType.json
+/.jhipster/Specialty.json
+/.jhipster/Vet.json
+/.jhipster/VetSpecialty.json
+/.jhipster/Visit.json
