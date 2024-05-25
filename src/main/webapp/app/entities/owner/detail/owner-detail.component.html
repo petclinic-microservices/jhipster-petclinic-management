@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (owner()) {
+      <div>
+        <h2 data-cy="ownerDetailsHeading"><span>Owner</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>
+            <span>{{ owner()!.id }}</span>
+          </dd>
+          <dt><span>First Name</span></dt>
+          <dd>
+            <span>{{ owner()!.firstName }}</span>
+          </dd>
+          <dt><span>Last Name</span></dt>
+          <dd>
+            <span>{{ owner()!.lastName }}</span>
+          </dd>
+          <dt><span>Address</span></dt>
+          <dd>
+            <span>{{ owner()!.address }}</span>
+          </dd>
+          <dt><span>City</span></dt>
+          <dd>
+            <span>{{ owner()!.city }}</span>
+          </dd>
+          <dt><span>Telephone</span></dt>
+          <dd>
+            <span>{{ owner()!.telephone }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/owner', owner()!.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>
