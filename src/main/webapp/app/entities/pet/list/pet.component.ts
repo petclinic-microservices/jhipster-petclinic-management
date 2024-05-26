@@ -1,4 +1,4 @@
-import { Component, NgZone, inject, OnInit } from '@angular/core';
+import { Component, NgZone, inject, OnInit, Input, input } from '@angular/core';
 import { HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute, Data, ParamMap, Router, RouterModule } from '@angular/router';
 import { combineLatest, filter, Observable, Subscription, tap } from 'rxjs';
@@ -15,6 +15,7 @@ import { SORT, ITEM_DELETED_EVENT, DEFAULT_SORT_DATA } from 'app/config/navigati
 import { IPet } from '../pet.model';
 import { EntityArrayResponseType, PetService } from '../service/pet.service';
 import { PetDeleteDialogComponent } from '../delete/pet-delete-dialog.component';
+import { IOwner } from '../../owner/owner.model';
 
 @Component({
   standalone: true,
@@ -34,7 +35,6 @@ import { PetDeleteDialogComponent } from '../delete/pet-delete-dialog.component'
 })
 export class PetComponent implements OnInit {
   private static readonly NOT_SORTABLE_FIELDS_AFTER_SEARCH = ['name'];
-
   subscription: Subscription | null = null;
   pets?: IPet[];
   isLoading = false;
@@ -167,4 +167,6 @@ export class PetComponent implements OnInit {
       });
     });
   }
+
+  private searchOrLoadAll() {}
 }

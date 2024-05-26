@@ -1,0 +1,11 @@
+{
+  "annotations": {
+    "changelogDate": "20240525030251"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [],
+  "name": "VetSpecialty",
+  "relationships": [],
+  "service": "serviceClass"
+}

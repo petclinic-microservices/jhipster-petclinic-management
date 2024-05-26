@@ -1,0 +1,28 @@
+{
+  "annotations": {
+    "changelogDate": "20240525030249"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "80"
+    }
+  ],
+  "name": "Specialty",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "firstName",
+      "otherEntityName": "vet",
+      "otherEntityRelationshipName": "specialties",
+      "relationshipName": "vets",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

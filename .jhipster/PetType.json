@@ -1,0 +1,19 @@
+{
+  "annotations": {
+    "changelogDate": "20240525030248"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "80"
+    }
+  ],
+  "name": "PetType",
+  "pagination": "infinite-scroll",
+  "relationships": [],
+  "service": "serviceClass"
+}

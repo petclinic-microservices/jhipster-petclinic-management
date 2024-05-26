@@ -29,6 +29,22 @@
         </li>
         <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
         @if (account() !== null) {
+          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link" routerLink="/owner" id="owner-menu">
+              <span>
+                <fa-icon icon="person"></fa-icon>
+                <span>Owners</span>
+              </span>
+            </a>
+          </li>
+          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link" routerLink="/vet" routerLinkActive="active" id="vet-menu">
+              <span>
+                <fa-icon icon="user-doctor"></fa-icon>
+                <span>Veterinarians</span>
+              </span>
+            </a>
+          </li>
           <li
             ngbDropdown
             class="nav-item dropdown pointer"
